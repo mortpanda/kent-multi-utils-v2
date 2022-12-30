@@ -1,0 +1,113 @@
+html,
+body {
+  background-image: url("../assets/bg-cloud-v2.png");
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+
+@media (orientation: portrait) {
+    .appMain{
+    
+    }
+    }
+
+@media (orientation: landscape) {
+.appMain{
+
+}
+}
+
+
+#okta-sign-in {
+    // margin-top: 0px !important;
+    // width: 400px !important;
+  }
+  
+  .auth-container {
+    -webkit-backdrop-filter: blur(70px) !important;
+    backdrop-filter: blur(70px) !important;
+    background: transparent !important;
+    border-top: 2px solid rgba(225, 225, 225, 0.3);
+    border-left: 2px solid rgba(225, 225, 225, 0.1);
+    border-right: 1px solid rgba(225, 225, 225, 0.2);
+  }
+  
+  .auth-container,
+  .main-container,
+  .no-beacon {
+    background: transparent !important;
+    color: #ffffff !important;
+  }
+  
+  .okta-form-title,
+  .o-form-head {
+    color: #ffffff !important;
+  }
+  
+  .okta-form-label,
+  .o-form-label {
+    color: #ffffff !important;
+  }
+  
+  #okta-sign-in .sign-in-with-device-option .separation-line:before {
+    border-top: none !important;
+  }
+  
+  #okta-sign-in {
+    .separation-line {
+      background: transparent !important;
+      font-size: 13px;
+    }
+  
+    .separation-line span {
+      color: #ffffff !important;
+      background: transparent !important;
+    }
+  }
+  
+  #okta-sign-in .siw-main-footer .auth-footer .link {
+    color: #ffffff !important;
+  }
+  
+  .okta-form-infobox-error,
+  .infobox,
+  .infobox-error {
+    color: red !important;
+  }
+  
+  #okta-sign-in {
+    .o-form {
+      .input-fix {
+        color: #6e6e78 !important;
+      }
+    }
+  }
+  
+  #okta-sign-in .auth-header {
+    border: none !important;
+  }
+  
+  #okta-sign-in {
+    border-width: 0px !important;
+    height: auto;
+    // MOVES WIDGET TO LEFT
+    // margin: 0px !important;
+  }
+  
+  #okta-sign-in.auth-container .button-primary {
+    color: #FFFFFF;
+    background-color: #CC8A00 !important;
+    background: #CC8A00 !important;
+    border-color: #CC8A00 !important;
+  }
+  
+  #okta-sign-in.auth-container h3 {
+    color: #ffffff !important;
+  }
+  
+  #okta-sign-in.auth-container .okta-form-subtitle {
+    color: #ffffff !important;
+  }
