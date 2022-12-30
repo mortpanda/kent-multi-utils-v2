@@ -1,1 +1,19 @@
-<p>menu works!</p>
+<ng-template #bigScreen>
+    <div class="appMain" fxLayout="columns wrap" fxLayoutAlign="center center">
+
+       <div class="appContainer" >
+
+       </div>
+
+    </div>
+</ng-template>
+<!-- ************************* SMALL SCREEN ************************* -->
+<!-- ************************* SMALL SCREEN ************************* -->
+<ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+    <div class="appMain">
+        <div class="appContainer">
+
+        </div>
+
+    </div>
+</ng-template>

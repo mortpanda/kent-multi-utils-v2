@@ -1,7 +1,22 @@
-<div class="appMain" fxLayout="columns wrap" fxLayoutAlign="center center">
+<ng-template #bigScreen>
+    <div class="appMain">
 
-    
-        <div id="okta-signin-container"></div>
-    <div></div>
+        <div class="subConatiner" fxLayout="columns wrap" fxLayoutAlign="center center">
+            <div class="leftSub" fxLayout="columns wrap" fxLayoutAlign="center center">
+                <div id="okta-signin-container"></div>
+            </div>
+            <div class="rightSub">
+            </div>
+        </div>
 
-</div>
+    </div>
+</ng-template>
+<!-- ************************* SMALL SCREEN ************************* -->
+<!-- ************************* SMALL SCREEN ************************* -->
+<ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+    <div class="appMain">
+        <div class="subConatiner" fxLayout="columns wrap" fxLayoutAlign="center center">
+            <div id="okta-signin-container"></div>
+        </div>
+    </div>
+</ng-template>
