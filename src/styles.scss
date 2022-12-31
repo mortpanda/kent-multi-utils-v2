@@ -23,7 +23,7 @@ body {
     .appMain {
         height: 100vh;
         width: 100vw;
-        padding:5%!important;
+        padding: 5% !important;
     }
 
     #okta-signin-container {
@@ -50,6 +50,37 @@ body {
     .okta-verify-authenticator {
         display: none !important;
     }
+
+    .userName {
+        position: fixed !important;
+        top: 2% !important;
+        // left: 2% !important;
+    }
+
+    .appContainer {
+        border-style: solid;
+        width: 95% !important;
+        height: 85% !important;
+    }
+
+    #toolBar {
+        .p-dock {
+            
+            position: fixed !important;
+            .p-dock-action {
+                height: 7vh;
+            }
+        }
+        .p-dock-list-container {
+            display: block;
+            pointer-events: auto;
+        }
+        .p-dock {
+            .p-dock-item {
+                padding: 0px !important;
+            }
+        }
+    }
 }
 
 // ********** Landscape **********
@@ -57,7 +88,7 @@ body {
     .appMain {
         height: 100vh !important;
         width: 100vw !important;
-        
+
     }
 
     .subConatiner {
@@ -102,19 +133,42 @@ body {
         display: none !important;
     }
 
-    .appContainer{
+    .appContainer {
         border-style: solid;
-        width:85%!important;
-        height:70%!important;
+        width: 90% !important;
+        height: 75% !important;
+    }
+
+    .userName {
+        position: fixed !important;
+        bottom: 5% !important;
+        left: 2% !important;
+    }
+
+    #toolBar {
+        .p-dock {
+            position: fixed !important;
+
+            .p-dock-action {
+                height: 7vh;
+            }
+        }
+
+        .p-dock {
+            .p-dock-item {
+                padding: 0px !important;
+            }
+        }
     }
 }
 
 @media (orientation: small) {
-    .appMain{
+    .appMain {
         height: 100vh !important;
         width: 100vw !important;
-        padding:5%!important;
+        padding: 5% !important;
     }
+
     #okta-signin-container {
         margin-top: 10% !important;
     }
@@ -139,13 +193,25 @@ body {
     .okta-verify-authenticator {
         display: none !important;
     }
+
     #okta-sign-in {
         border-width: 0px !important;
         height: auto;
         // MOVES WIDGET TO LEFT
         margin: auto !important;
     }
-    
+
+    .userName {
+        position: fixed !important;
+        top: 2% !important;
+        // left: 2% !important;
+    }
+
+    .appContainer {
+        border-style: solid;
+        width: 95% !important;
+        height: 80% !important;
+    } 
 }
 
 // ********** Main CSS **********
@@ -252,19 +318,10 @@ body {
     box-shadow: none !important;
 }
 
-// #okta-sign-in .button, #okta-sign-in .button.link-button {
-//     background: #191919 !important;
-//     color:#FFFFFF!important; 
-// }
-// #okta-sign-in.auth-container .okta-verify-authenticator {
-//     background-image: none!important;
-
-// }
-// .okta-verify-container{
-//     text-align: center!important;
-
-// }
-
-// .icon, .okta-verify-authenticator{
-//     display:none!important;
-// }
+#toolBar {
+    .p-dock {
+        .p-dock-action {
+            color: #FFFFFF !important;
+        }
+    }
+}

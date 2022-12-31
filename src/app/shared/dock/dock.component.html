@@ -1,0 +1,23 @@
+<ng-template #bigScreen>
+
+    <p-dock [model]="toolbarItems" position="bottom" id="toolBar">
+        <ng-template pTemplate="item" let-item>
+            <i [class]="item.icon" [style]="item.style"></i>
+        </ng-template>
+    </p-dock>
+
+</ng-template>
+
+
+<!-- ************************* SMALL SCREEN ************************* -->
+<!-- ************************* SMALL SCREEN ************************* -->
+<ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+
+    <p-dock [model]="toolbarItems" position="bottom" id="toolBar">
+        <ng-template pTemplate="item" let-item>
+            <i [class]="item.icon" [style]="item.style"></i>
+        </ng-template>
+    </p-dock>
+
+
+</ng-template>

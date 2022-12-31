@@ -16,26 +16,76 @@ export class MenuListService {
   mainAppMenu = [
     {
       tooltipOptions: {
-        tooltipLabel: "Websites",
+        tooltipLabel: "Daily Apps",
         tooltipPosition: "top",
       },
       icon: "pi pi-box",
       // style: 'font-size: 2rem;',
       routerLink: '/websites'
     },
-
-
-    // {
-    //   tooltipOptions: {
-    //     tooltipLabel: "To Do",
-    //     tooltipPosition: "top",
-    //   },
-    //   icon: "pi pi-check",
-    //   // style: 'font-size: 2rem;',
-    //   routerLink: '/todo'
-    // },
-
-
+    {
+      tooltipOptions: {
+        tooltipLabel: "Admin Dashboard",
+        tooltipPosition: "top",
+      },
+      icon: "pi pi-bookmark-fill",
+      // style: 'font-size: 2rem;',
+      routerLink: '/bookmarks'
+    },
+    {
+      tooltipOptions: {
+        tooltipLabel: "User Dashboard",
+        tooltipPosition: "top",
+      },
+      icon: "pi pi-bookmark-fill",
+      // style: 'font-size: 2rem;',
+      routerLink: '/bookmarks'
+    },
+    {
+      tooltipOptions: {
+        tooltipLabel: "Okta Sites",
+        tooltipPosition: "top",
+      },
+      icon: "pi pi-bookmark-fill",
+      // style: 'font-size: 2rem;',
+      routerLink: '/bookmarks'
+    },
+    {
+      tooltipOptions: {
+        tooltipLabel: "K-Lab Sites",
+        tooltipPosition: "top",
+      },
+      icon: "pi pi-bookmark-fill",
+      // style: 'font-size: 2rem;',
+      routerLink: '/bookmarks'
+    },
+    {
+      tooltipOptions: {
+        tooltipLabel: "Dev Info",
+        tooltipPosition: "top",
+      },
+      icon: "pi pi-bookmark-fill",
+      // style: 'font-size: 2rem;',
+      routerLink: '/bookmarks'
+    },
+    {
+      tooltipOptions: {
+        tooltipLabel: "OIE Prjects",
+        tooltipPosition: "top",
+      },
+      icon: "pi pi-bookmark-fill",
+      // style: 'font-size: 2rem;',
+      routerLink: '/bookmarks'
+    },
+    {
+      tooltipOptions: {
+        tooltipLabel: "Personal Prjects",
+        tooltipPosition: "top",
+      },
+      icon: "pi pi-bookmark-fill",
+      // style: 'font-size: 2rem;',
+      routerLink: '/bookmarks'
+    },
     {
       tooltipOptions: {
         tooltipLabel: "Bookmarks",
@@ -45,8 +95,6 @@ export class MenuListService {
       // style: 'font-size: 2rem;',
       routerLink: '/bookmarks'
     },
-
-
     {
       tooltipOptions: {
         tooltipLabel: "World Clock",
@@ -62,7 +110,7 @@ export class MenuListService {
 
 
 
-  smallToolbar = [
+  dockMenu = [
     {
       tooltipOptions: {
         tooltipLabel: "Main Menu",
