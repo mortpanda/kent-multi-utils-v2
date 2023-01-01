@@ -2,14 +2,15 @@
 
     <div class="appMain" fxLayout="columns wrap" fxLayoutAlign="center center">
         <app-dock></app-dock>
-        <div class="appContainer"  fxLayout="row wrap" fxLayoutAlign="center center">
+        <div class="appContainer" fxLayout="row wrap" fxLayoutAlign="center start">
 
+            <div class="menuHead">
+                <h1>Main Menu</h1>
+            </div>
+            <p-button label="{{menuItem.label}}" routerLink="/{{menuItem.strUri}}" *ngFor="let menuItem of mainAppMenu"
+                id="appButton">
 
-            <p-button label="{{menuItem.label}}" routerLink="/{{menuItem.strUri}}" *ngFor="let menuItem of mainAppMenu" id="appButton">
-                
             </p-button>
-
-            
 
         </div>
         <div class="userName">{{strFullName}}</div>
@@ -22,10 +23,14 @@
     <div class="appMain" fxLayout="rows wrap" fxLayoutAlign="center center">
         <app-dock></app-dock>
         <div class="appContainer" fxLayout="rows wrap" fxLayoutAlign="center start">
+            <div class="menuHead">
+                <h1>Main Menu</h1>
+            </div>
+            <p-button label="{{menuItem.label}}" routerLink="/{{menuItem.strUri}}" *ngFor="let menuItem of mainAppMenu"
+                id="appButton">
 
-            <p-button label="{{menuItem.label}}" routerLink="/{{menuItem.strUri}}" *ngFor="let menuItem of mainAppMenu" id="appButton">
-                
             </p-button>
+
         </div>
         <div class="userName">{{strFullName}}</div>
     </div>

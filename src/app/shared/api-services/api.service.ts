@@ -1,19 +1,10 @@
 import { Injectable } from '@angular/core';
-import { OktaConfigService } from "./okta-config.service";
-import { OktaSDKAuthService } from './okta-auth.service';
-import { OktaAuth } from '@okta/okta-auth-js';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class OktaApiService {
-  public authService = new OktaAuth(this.OktaSDKAuthService.config);
-
-  constructor(
-    public OktaConfigService: OktaConfigService,
-    public OktaSDKAuthService: OktaSDKAuthService,
-  ) { }
+export class ApiService {
+    constructor(  ) { }
 
   async OktaGet(url, token) {
     const thisFetch = fetch(url, {
@@ -62,22 +53,19 @@ export class OktaApiService {
     return ResStatus;
   }
 
+  async GetMyWebsites(url, mykey, email) {
+    let requestURI;
+    requestURI = url;
 
-
-  // CatTabLabel = {};
-  // async processArrayRes(arrCat) {
-  //   let arrCategories;
-  //   for (var i = 0; i < arrCat.length; i++) {
-  //     this.CatTabLabel[i] = {
-  //       label: arrCat[i].categories
-  //     };
-      
-
-  //   }
-  //   console.log(this.CatTabLabel)
-  //   //return
-  // }
-
+    let requestBody;
+    requestBody = {
+      mykey: mykey,
+      email: email,
+    }
+    var strWebsites;
+    strWebsites = await this.InvokeFlow(requestURI, requestBody);
+    return strWebsites;
+  }
 
 }
 

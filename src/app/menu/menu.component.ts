@@ -23,9 +23,9 @@ export class MenuComponent implements OnInit {
   strFullName;
   mainAppMenu = [];
   selectedMessage: any;
-  myKey;
+  // myKey;
   myAccessToken;
-  myEmail;
+  // myEmail;
   constructor(
     private OktaGetTokenService: OktaGetTokenService,
     private OktaSDKAuthService: OktaSDKAuthService,
@@ -62,17 +62,13 @@ export class MenuComponent implements OnInit {
           })
           this.strFullName = await this.strThisUser.name;
           this.myAccessToken = await this.OktaGetTokenService.GetAccessToken()
-          this.myKey = await this.myAccessToken.claims.myKey;
-          this.myEmail = await this.myAccessToken.claims.sub;
+          // this.myKey = await this.myAccessToken.claims.myKey;
+          // this.myEmail = await this.myAccessToken.claims.sub;
 
         break;
       }
     }
     console.log(this.strThisUser)
-    console.log(this.myKey)
-  }
-
-  Goto(){
-    
+    // console.log(this.myKey)
   }
 }

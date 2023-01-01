@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { OktaApiService } from './okta-api.service';
+import { ApiService } from './api.service';
 
-describe('OktaApiService', () => {
-  let service: OktaApiService;
+describe('ApiService', () => {
+  let service: ApiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(OktaApiService);
+    service = TestBed.inject(ApiService);
   });
 
   it('should be created', () => {

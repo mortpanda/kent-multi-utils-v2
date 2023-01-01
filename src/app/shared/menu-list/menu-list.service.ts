@@ -20,7 +20,7 @@ export class MenuListService {
     },
     {
       label: "Admin Dashboard",
-      strUri: '/bookmarks'
+      strUri: '/admin'
     },
     {
       label: "User Dashboard",
@@ -78,7 +78,7 @@ export class MenuListService {
         tooltipPosition: "top",
       },
       icon: "pi pi-bars",
-      routerLink: '/start',
+      routerLink: '/menu',
     },
     {
       tooltipOptions: {
@@ -127,6 +127,10 @@ export class MenuListService {
       }
     },
   ]
+
+  async Goto(url){
+    await window.open(url, '_blank');
+  } 
 
   async Logout() {
     this.OktaSDKAuthService.OktaSDKAuthClient.signOut();
