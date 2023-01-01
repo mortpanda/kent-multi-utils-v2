@@ -15,94 +15,45 @@ export class MenuListService {
 
   mainAppMenu = [
     {
-      tooltipOptions: {
-        tooltipLabel: "Daily Apps",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-box",
-      // style: 'font-size: 2rem;',
-      routerLink: '/websites'
+      label: "Daily Apps",
+      strUri: '/websites',
     },
     {
-      tooltipOptions: {
-        tooltipLabel: "Admin Dashboard",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-bookmark-fill",
-      // style: 'font-size: 2rem;',
-      routerLink: '/bookmarks'
+      label: "Admin Dashboard",
+      strUri: '/bookmarks'
     },
     {
-      tooltipOptions: {
-        tooltipLabel: "User Dashboard",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-bookmark-fill",
-      // style: 'font-size: 2rem;',
-      routerLink: '/bookmarks'
+      label: "User Dashboard",
+      strUri: '/bookmarks'
     },
     {
-      tooltipOptions: {
-        tooltipLabel: "Okta Sites",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-bookmark-fill",
-      // style: 'font-size: 2rem;',
-      routerLink: '/bookmarks'
+      label: "Okta Sites",
+      strUri: '/bookmarks'
     },
     {
-      tooltipOptions: {
-        tooltipLabel: "K-Lab Sites",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-bookmark-fill",
-      // style: 'font-size: 2rem;',
-      routerLink: '/bookmarks'
+      label: "K-Lab Sites",
+      strUri: '/bookmarks'
     },
     {
-      tooltipOptions: {
-        tooltipLabel: "Dev Info",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-bookmark-fill",
-      // style: 'font-size: 2rem;',
-      routerLink: '/bookmarks'
+      label: "Dev Info",
+      strUri: '/bookmarks'
     },
     {
-      tooltipOptions: {
-        tooltipLabel: "OIE Prjects",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-bookmark-fill",
-      // style: 'font-size: 2rem;',
-      routerLink: '/bookmarks'
+      label: "OIE Projects",
+      strUri: '/bookmarks'
     },
     {
-      tooltipOptions: {
-        tooltipLabel: "Personal Prjects",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-bookmark-fill",
-      // style: 'font-size: 2rem;',
-      routerLink: '/bookmarks'
+      label: "Personal Projects",
+      tooltipPosition: "top",
+      strUri: '/bookmarks'
     },
     {
-      tooltipOptions: {
-        tooltipLabel: "Bookmarks",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-bookmark-fill",
-      // style: 'font-size: 2rem;',
-      routerLink: '/bookmarks'
+      label: "Bookmarks",
+      strUri: '/bookmarks'
     },
     {
-      tooltipOptions: {
-        tooltipLabel: "World Clock",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-clock",
-      // style: 'font-size: 2rem;',
-      routerLink: '/worldtime'
+      label: "World Clock",
+      strUri: '/worldtime'
     },
 
 
@@ -113,15 +64,6 @@ export class MenuListService {
   dockMenu = [
     {
       tooltipOptions: {
-        tooltipLabel: "Main Menu",
-        tooltipPosition: "top",
-      },
-      icon: "pi pi-bars",
-      routerLink: '/start',
-    },
-
-    {
-      tooltipOptions: {
         tooltipLabel: "Home",
         tooltipPosition: "top",
       },
@@ -130,7 +72,14 @@ export class MenuListService {
         this.GoHome();
       }
     },
-
+    {
+      tooltipOptions: {
+        tooltipLabel: "Main Menu",
+        tooltipPosition: "top",
+      },
+      icon: "pi pi-bars",
+      routerLink: '/start',
+    },
     {
       tooltipOptions: {
         tooltipLabel: "Logout",

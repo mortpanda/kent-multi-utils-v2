@@ -160,6 +160,22 @@ body {
             }
         }
     }
+
+    #appButton{
+        .p-button{
+            background-color: transparent!important;
+            text-transform: uppercase!important;
+            border-radius: 0px!important;
+            margin:10px!important;
+            border-left: none!important;
+            border-right: none!important;
+            border-color: #ffffff!important;
+            width:20vw!important;
+            height:10vh!important;
+            font-size: 12px!important;
+        }
+
+    }
 }
 
 @media (orientation: small) {

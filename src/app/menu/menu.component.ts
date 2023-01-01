@@ -41,6 +41,7 @@ export class MenuComponent implements OnInit {
     ]).subscribe(result => {
       this.smallScreen = result.matches;
     });
+    this.mainAppMenu=this.MenuListService.mainAppMenu;
    }
 
    async ngOnInit() {
@@ -71,4 +72,7 @@ export class MenuComponent implements OnInit {
     console.log(this.myKey)
   }
 
+  Goto(){
+    
+  }
 }

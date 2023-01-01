@@ -9,6 +9,8 @@ import { LandingComponent } from './landing/landing.component';
 import { MenuComponent } from './menu/menu.component';
 import { DockComponent } from './shared/dock/dock.component';
 import { DockModule } from 'primeng/dock';
+import {ButtonModule} from 'primeng/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import { DockModule } from 'primeng/dock';
     BrowserAnimationsModule,
     FlexLayoutModule,
     DockModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
