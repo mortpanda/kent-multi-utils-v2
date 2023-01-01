@@ -16,7 +16,7 @@ export class MenuListService {
   mainAppMenu = [
     {
       label: "Daily Apps",
-      strUri: '/websites',
+      strUri: '/dailysites',
     },
     {
       label: "Admin Dashboard",

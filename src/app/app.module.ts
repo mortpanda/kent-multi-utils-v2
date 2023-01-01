@@ -10,13 +10,15 @@ import { MenuComponent } from './menu/menu.component';
 import { DockComponent } from './shared/dock/dock.component';
 import { DockModule } from 'primeng/dock';
 import {ButtonModule} from 'primeng/button';
+import { DailysitesComponent } from './dailysites/dailysites.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     MenuComponent,
-    DockComponent
+    DockComponent,
+    DailysitesComponent
   ],
   imports: [
     BrowserModule,

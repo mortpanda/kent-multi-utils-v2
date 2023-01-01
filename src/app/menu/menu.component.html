@@ -5,7 +5,7 @@
         <div class="appContainer"  fxLayout="row wrap" fxLayoutAlign="center center">
 
 
-            <p-button label="{{menuItem.label}}" (onClick)="Goto(menuItem.strUri)" *ngFor="let menuItem of mainAppMenu" id="appButton">
+            <p-button label="{{menuItem.label}}" routerLink="/{{menuItem.strUri}}" *ngFor="let menuItem of mainAppMenu" id="appButton">
                 
             </p-button>
 
@@ -19,10 +19,13 @@
 <!-- ************************* SMALL SCREEN ************************* -->
 <!-- ************************* SMALL SCREEN ************************* -->
 <ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
-    <div class="appMain" fxLayout="columns wrap" fxLayoutAlign="center center">
+    <div class="appMain" fxLayout="rows wrap" fxLayoutAlign="center center">
         <app-dock></app-dock>
-        <div class="appContainer">
+        <div class="appContainer" fxLayout="rows wrap" fxLayoutAlign="center start">
 
+            <p-button label="{{menuItem.label}}" routerLink="/{{menuItem.strUri}}" *ngFor="let menuItem of mainAppMenu" id="appButton">
+                
+            </p-button>
         </div>
         <div class="userName">{{strFullName}}</div>
     </div>

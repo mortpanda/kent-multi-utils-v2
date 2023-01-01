@@ -65,20 +65,38 @@ body {
 
     #toolBar {
         .p-dock {
-            
+
             position: fixed !important;
+
             .p-dock-action {
                 height: 7vh;
             }
         }
+
         .p-dock-list-container {
             display: block;
             pointer-events: auto;
         }
+
         .p-dock {
             .p-dock-item {
                 padding: 0px !important;
             }
+        }
+    }
+
+    #appButton {
+        .p-button {
+            background-color: transparent !important;
+            text-transform: uppercase !important;
+            border-radius: 0px !important;
+            margin: 10px !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-color: #ffffff !important;
+            width: 35vw !important;
+            height: 10vh !important;
+            font-size: 10px !important;
         }
     }
 }
@@ -146,7 +164,9 @@ body {
     }
 
     #toolBar {
+
         .p-dock {
+
             position: fixed !important;
 
             .p-dock-action {
@@ -161,18 +181,18 @@ body {
         }
     }
 
-    #appButton{
-        .p-button{
-            background-color: transparent!important;
-            text-transform: uppercase!important;
-            border-radius: 0px!important;
-            margin:10px!important;
-            border-left: none!important;
-            border-right: none!important;
-            border-color: #ffffff!important;
-            width:20vw!important;
-            height:10vh!important;
-            font-size: 12px!important;
+    #appButton {
+        .p-button {
+            background-color: transparent !important;
+            text-transform: uppercase !important;
+            border-radius: 0px !important;
+            margin: 10px !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-color: #ffffff !important;
+            width: 20vw !important;
+            height: 10vh !important;
+            font-size: 12px !important;
         }
 
     }
@@ -227,7 +247,24 @@ body {
         border-style: solid;
         width: 95% !important;
         height: 80% !important;
-    } 
+    }
+
+    #appButton {
+        .p-button {
+            background-color: transparent !important;
+            text-transform: uppercase !important;
+            border-radius: 0px !important;
+            margin: 10px !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-color: #ffffff !important;
+            width: 20vw !important;
+            height: 10vh !important;
+            font-size: 12px !important;
+        }
+
+
+    }
 }
 
 // ********** Main CSS **********
