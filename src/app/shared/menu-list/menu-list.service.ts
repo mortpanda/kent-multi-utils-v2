@@ -28,31 +28,31 @@ export class MenuListService {
     },
     {
       label: "Okta Sites",
-      strUri: '/bookmarks'
+      strUri: '/oktasites'
     },
-    {
-      label: "K-Lab Sites",
-      strUri: '/bookmarks'
-    },
-    {
-      label: "Dev Info",
-      strUri: '/bookmarks'
-    },
+    // {
+    //   label: "K-Lab Sites",
+    //   strUri: '/bookmarks'
+    // },
+    // {
+    //   label: "Dev Info",
+    //   strUri: '/bookmarks'
+    // },
     {
       label: "OIE Projects",
-      strUri: '/bookmarks'
+      strUri: '/myoieapps'
     },
     {
       label: "Personal Projects",
       tooltipPosition: "top",
-      strUri: '/bookmarks'
+      strUri: '/personalapps'
     },
     {
       label: "Bookmarks",
       strUri: '/bookmarks'
     },
     {
-      label: "World Clock",
+      label: "World Time",
       strUri: '/worldtime'
     },
 

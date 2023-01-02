@@ -1,0 +1,72 @@
+<ng-template #bigScreen>
+
+    <div class="appMain" fxLayout="columns wrap" fxLayoutAlign="center center">
+        <app-dock></app-dock>
+        <div class="appContainer" fxLayout="row wrap" fxLayoutAlign="center start">
+
+            <div class="menuHead">
+                <h2>World Time</h2>
+            </div>
+
+            <!-- <div class="timeDiv"> -->
+                <div fxLayout="row wrap" fxLayoutAlign="center start">
+                    <p-card id="timePanel">
+                        <p><a class="location">Sydney</a> <br />
+                        {{WorldtimeService.strSydneyDate}} <br />
+                            {{WorldtimeService.strSydneyTime}}</p>
+                    </p-card>
+
+                    <p-card id="timePanel">
+                        <p><a class="location">Singapore</a> <br />
+                        {{WorldtimeService.strSingaporeDate}} <br />
+                            {{WorldtimeService.strSingaporeTime}}</p>
+                    </p-card>
+
+                    <p-card id="timePanel">
+                        <p><a class="location">London</a> <br />
+                        {{WorldtimeService.strLondonDate}} <br />
+                            {{WorldtimeService.strLondonTime}}</p>
+                    </p-card>
+                    
+                    <p-card id="timePanel">
+                        <p><a class="location">San Francisco</a> <br />
+                        {{WorldtimeService.strSanFranDate}} <br />
+                            {{WorldtimeService.strSanFranTime}}</p>
+                    </p-card>
+                  
+                    <p-card id="timePanel">
+                        <p><a class="location">New York</a> <br />
+                        {{WorldtimeService.strNYDate}} <br />
+                            {{WorldtimeService.strNYTime}}</p>
+                    </p-card>
+
+                    <p-card id="timePanel">
+                        <p><a class="location">UTC</a> <br />
+                        {{WorldtimeService.strUTCDate}} <br />
+                            {{WorldtimeService.strUTCTime}}</p>
+                    </p-card>
+
+                </div>
+            <!-- </div> -->
+
+        </div>
+        <div class="userName">{{strFullName}}</div>
+    </div>
+
+</ng-template>
+<!-- ************************* SMALL SCREEN ************************* -->
+<!-- ************************* SMALL SCREEN ************************* -->
+<ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+    <div class="appMain" fxLayout="rows wrap" fxLayoutAlign="center center">
+        <app-dock></app-dock>
+        <div class="appContainer" fxLayout="rows wrap" fxLayoutAlign="center start">
+
+            <div class="menuHead">
+                <h2>World Time</h2>
+            </div>
+
+
+        </div>
+        <div class="userName">{{strFullName}}</div>
+    </div>
+</ng-template>

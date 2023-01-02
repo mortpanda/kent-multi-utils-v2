@@ -14,6 +14,12 @@ import { DailysitesComponent } from './dailysites/dailysites.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
+import { OktaSitesComponent } from './okta-sites/okta-sites.component';
+import { MyOieAppsComponent } from './my-oie-apps/my-oie-apps.component';
+import { PersonalAppsComponent } from './personal-apps/personal-apps.component';
+import { WorldtimeComponent } from './worldtime/worldtime.component';
+import { DatePipe } from '@angular/common';
+import {CardModule} from 'primeng/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +28,11 @@ import { UserComponent } from './user/user.component';
     DockComponent,
     DailysitesComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    OktaSitesComponent,
+    MyOieAppsComponent,
+    PersonalAppsComponent,
+    WorldtimeComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +42,9 @@ import { UserComponent } from './user/user.component';
     DockModule,
     ButtonModule,
     HttpClientModule,
+    CardModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
