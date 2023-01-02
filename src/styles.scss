@@ -112,6 +112,43 @@ body {
             cursor: pointer !important;
         }
     }
+    .timeDiv {
+        text-align: center !important;
+    }
+
+    #timePanel {
+        .p-card {
+            width: 70vw !important;
+            background-color: transparent !important;
+            -webkit-backdrop-filter: blur(7px) !important;
+            backdrop-filter: blur(7px) !important;
+            color: #FFFFFF!important;
+            box-shadow:none!important;
+            border-radius: 0px !important;
+            margin: 10px !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-color: #ffffff !important;
+            border-top-style: solid!important;
+            border-top-width: 1px!important;
+            border-bottom-style: solid!important;
+            border-bottom-width: 1px!important;
+        }
+
+        .p-card .p-card-body {
+            padding: 0rem !important;
+        }
+
+        .p-card .p-card-content {
+            padding: .25rem !important;
+        }
+    }
+
+    .location {
+        font-size: 18px !important;
+        text-transform: uppercase !important;
+        font-weight: bold;
+    }
 }
 
 // ********** Landscape **********
