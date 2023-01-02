@@ -61,26 +61,30 @@ body {
         // border-style: solid;
         width: 95% !important;
         height: 85% !important;
-        overflow-y: auto!important;
+        overflow-y: auto !important;
     }
 
     #toolBar {
         .p-dock {
             position: fixed !important;
-            padding:0px!important;
+            padding: 0px !important;
+
             .p-dock-action {
                 height: 7vh;
-                padding:0px!important;
+                padding: 0px !important;
             }
         }
+
         .p-dock-list {
-            padding:0px!important;
+            padding: 0px !important;
         }
+
         .p-dock-list-container {
             display: block;
             pointer-events: auto;
-            padding:0px!important;
+            padding: 0px !important;
         }
+
         .p-dock {
             .p-dock-item {
                 padding: 0px !important;
@@ -158,70 +162,82 @@ body {
         border-style: solid;
         width: 90% !important;
         height: 75% !important;
-        ;
+        overflow-y: auto !important;
+        // /* Hide scrollbar for Chrome, Safari and Opera */
+        // /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
     }
 
-    .userName {
+    .appContainer::-webkit-scrollbar {
+        display: none;
+    }
+
+
+.userName {
+    position: fixed !important;
+    bottom: 5% !important;
+    left: 2% !important;
+}
+
+#toolBar {
+
+    .p-dock {
+
         position: fixed !important;
-        bottom: 5% !important;
-        left: 2% !important;
-    }
 
-    #toolBar {
-
-        .p-dock {
-
-            position: fixed !important;
-
-            .p-dock-action {
-                height: 7vh;
-            }
-        }
-
-        .p-dock {
-            .p-dock-item {
-                padding: 0px !important;
-            }
+        .p-dock-action {
+            height: 7vh;
         }
     }
 
-    #appButton {
-        .p-button {
-            background-color: transparent !important;
-            text-transform: uppercase !important;
-            border-radius: 0px !important;
-            margin: 10px !important;
-            border-left: none !important;
-            border-right: none !important;
-            border-color: #ffffff !important;
-            width: 20vw !important;
-            height: 10vh !important;
-            font-size: 12px !important;
-            font-size: 12px !important;
-            -webkit-backdrop-filter: blur(7px) !important;
-            backdrop-filter: blur(7px) !important;
+    .p-dock {
+        .p-dock-item {
+            padding: 0px !important;
         }
-
     }
-    #appButton {
-        .p-button:hover {
-            color:#CC8A00!important;
-            // background-color: darkgrey !important;
-            // text-transform: uppercase !important;
-            // border-radius: 0px !important;
-            // margin: 10px !important;
-            // border-left: none !important;
-            // border-right: none !important;
-            // border-color: #ffffff !important;
-            // width: 20vw !important;
-            // height: 10vh !important;
-            // font-size: 12px !important;
-            // font-size: 12px !important;
-            // -webkit-backdrop-filter: blur(7px) !important;
-            // backdrop-filter: blur(7px) !important;
-        }
+}
 
+#appButton {
+    .p-button {
+        background-color: transparent !important;
+        text-transform: uppercase !important;
+        border-radius: 0px !important;
+        margin: 10px !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-color: #ffffff !important;
+        width: 20vw !important;
+        height: 10vh !important;
+        font-size: 12px !important;
+        font-size: 12px !important;
+        -webkit-backdrop-filter: blur(7px) !important;
+        backdrop-filter: blur(7px) !important;
     }
+
+}
+
+#appButton {
+    .p-button:hover {
+        color: #CC8A00 !important;
+        // background-color: darkgrey !important;
+        // text-transform: uppercase !important;
+        // border-radius: 0px !important;
+        // margin: 10px !important;
+        // border-left: none !important;
+        // border-right: none !important;
+        // border-color: #ffffff !important;
+        // width: 20vw !important;
+        // height: 10vh !important;
+        // font-size: 12px !important;
+        // font-size: 12px !important;
+        // -webkit-backdrop-filter: blur(7px) !important;
+        // backdrop-filter: blur(7px) !important;
+    }
+
+}
 }
 
 @media (orientation: small) {
@@ -407,8 +423,8 @@ body {
     }
 }
 
-.menuHead{
-    width:100%;
+.menuHead {
+    width: 100%;
     // border-style: solid;
-    text-align: center!important;
+    text-align: center !important;
 }

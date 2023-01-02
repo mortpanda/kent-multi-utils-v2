@@ -5,7 +5,7 @@
         <div class="appContainer" fxLayout="row wrap" fxLayoutAlign="center start">
 
             <div class="menuHead">
-                <h1><i class="pi pi-server" style="font-size: 2rem"></i> Daily Apps</h1>
+                <h2>Daily Apps</h2>
             </div>
             <p-button label="{{menuItem.name}}" (click)="MenuListService.Goto(menuItem.strUri)" *ngFor="let menuItem of dailyWebsites"
                 id="appButton">
