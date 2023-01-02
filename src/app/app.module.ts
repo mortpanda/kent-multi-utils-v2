@@ -13,6 +13,7 @@ import { ButtonModule } from 'primeng/button';
 import { DailysitesComponent } from './dailysites/dailysites.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { AdminComponent } from './admin/admin.component';
     MenuComponent,
     DockComponent,
     DailysitesComponent,
-    AdminComponent
+    AdminComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

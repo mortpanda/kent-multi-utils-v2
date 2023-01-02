@@ -24,7 +24,7 @@ export class MenuListService {
     },
     {
       label: "User Dashboard",
-      strUri: '/bookmarks'
+      strUri: '/user'
     },
     {
       label: "Okta Sites",

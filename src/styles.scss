@@ -106,6 +106,12 @@ body {
             font-size: 10px !important;
         }
     }
+
+    #appButton {
+        .p-button:hover {
+            cursor: pointer !important;
+        }
+    }
 }
 
 // ********** Landscape **********
@@ -175,120 +181,34 @@ body {
         display: none;
     }
 
-
-.userName {
-    position: fixed !important;
-    bottom: 5% !important;
-    left: 2% !important;
-}
-
-#toolBar {
-
-    .p-dock {
-
-        position: fixed !important;
-
-        .p-dock-action {
-            height: 7vh;
+    #appButton {
+        .p-button:hover {
+            cursor: pointer !important;
         }
-    }
-
-    .p-dock {
-        .p-dock-item {
-            padding: 0px !important;
-        }
-    }
-}
-
-#appButton {
-    .p-button {
-        background-color: transparent !important;
-        text-transform: uppercase !important;
-        border-radius: 0px !important;
-        margin: 10px !important;
-        border-left: none !important;
-        border-right: none !important;
-        border-color: #ffffff !important;
-        width: 20vw !important;
-        height: 10vh !important;
-        font-size: 12px !important;
-        font-size: 12px !important;
-        -webkit-backdrop-filter: blur(7px) !important;
-        backdrop-filter: blur(7px) !important;
-    }
-
-}
-
-#appButton {
-    .p-button:hover {
-        color: #CC8A00 !important;
-        // background-color: darkgrey !important;
-        // text-transform: uppercase !important;
-        // border-radius: 0px !important;
-        // margin: 10px !important;
-        // border-left: none !important;
-        // border-right: none !important;
-        // border-color: #ffffff !important;
-        // width: 20vw !important;
-        // height: 10vh !important;
-        // font-size: 12px !important;
-        // font-size: 12px !important;
-        // -webkit-backdrop-filter: blur(7px) !important;
-        // backdrop-filter: blur(7px) !important;
-    }
-
-}
-}
-
-@media (orientation: small) {
-    .appMain {
-        height: 100vh !important;
-        width: 100vw !important;
-        padding: 5% !important;
-    }
-
-    #okta-signin-container {
-        margin-top: 10% !important;
-    }
-
-    #okta-sign-in .button,
-    #okta-sign-in .button.link-button {
-        background: #CC8A00 !important;
-        color: #FFFFFF !important;
-    }
-
-    #okta-sign-in.auth-container .okta-verify-authenticator {
-        background-image: none !important;
-
-    }
-
-    .okta-verify-container {
-        text-align: center !important;
-
-    }
-
-    .icon,
-    .okta-verify-authenticator {
-        display: none !important;
-    }
-
-    #okta-sign-in {
-        border-width: 0px !important;
-        height: auto;
-        // MOVES WIDGET TO LEFT
-        margin: auto !important;
     }
 
     .userName {
         position: fixed !important;
-        top: 2% !important;
-        // left: 2% !important;
+        bottom: 5% !important;
+        left: 2% !important;
     }
 
-    .appContainer {
-        border-style: solid;
-        width: 95% !important;
-        height: 80% !important;
+    #toolBar {
+
+        .p-dock {
+
+            position: fixed !important;
+
+            .p-dock-action {
+                height: 7vh;
+            }
+        }
+
+        .p-dock {
+            .p-dock-item {
+                padding: 0px !important;
+            }
+        }
     }
 
     #appButton {
@@ -303,10 +223,30 @@ body {
             width: 20vw !important;
             height: 10vh !important;
             font-size: 12px !important;
+            font-size: 12px !important;
             -webkit-backdrop-filter: blur(7px) !important;
             backdrop-filter: blur(7px) !important;
         }
 
+    }
+
+    #appButton {
+        .p-button:hover {
+            color: #CC8A00 !important;
+            // background-color: darkgrey !important;
+            // text-transform: uppercase !important;
+            // border-radius: 0px !important;
+            // margin: 10px !important;
+            // border-left: none !important;
+            // border-right: none !important;
+            // border-color: #ffffff !important;
+            // width: 20vw !important;
+            // height: 10vh !important;
+            // font-size: 12px !important;
+            // font-size: 12px !important;
+            // -webkit-backdrop-filter: blur(7px) !important;
+            // backdrop-filter: blur(7px) !important;
+        }
 
     }
 }
