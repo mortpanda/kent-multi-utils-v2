@@ -5,12 +5,20 @@
         <div class="appContainer" fxLayout="row wrap" fxLayoutAlign="center start">
 
             <div class="menuHead">
-                <h2>Admin Dashboards</h2>
+                <h2>Bookmarks</h2>
             </div>
-            <p-button label="{{menuItem.name}}" (click)="MenuListService.Goto(menuItem.strUri)" *ngFor="let menuItem of dailyWebsites"
-                id="appButton">
 
-            </p-button>
+            <div class="searchDiv">
+                <input type="text" pInputText id="searchTexField" [(ngModel)]="searchText">
+            </div>
+
+            <!-- <p-button label="{{menuItem.description}}" (click)="MenuListService.Goto(menuItem.strUri)"
+                *ngFor="let menuItem of myBookmarks" id="bookmarkButton">
+            </p-button> -->
+
+            <div class="bookMarkDiv" *ngFor="let menuItem of myBookmarks" (click)="MenuListService.Goto(menuItem.siteURL)">
+                {{menuItem.description}}
+            </div>
 
         </div>
         <div class="userName">{{strFullName}}</div>
@@ -25,12 +33,13 @@
         <div class="appContainer" fxLayout="rows wrap" fxLayoutAlign="center start">
 
             <div class="menuHead">
-                <h2>Admin Dashboards</h2>
+                <h2>Bookmarks</h2>
             </div>
-            <p-button label="{{menuItem.name}}" (click)="MenuListService.Goto(menuItem.strUri)" *ngFor="let menuItem of dailyWebsites"
-                id="appButton">
 
-            </p-button>
+            <div class="searchDiv">
+                Search : <input type="text" pInputText id="searchTexField" [(ngModel)]="searchText">
+            </div>
+
 
         </div>
         <div class="userName">{{strFullName}}</div>

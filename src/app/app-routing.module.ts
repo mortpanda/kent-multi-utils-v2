@@ -9,6 +9,7 @@ import { OktaSitesComponent } from './okta-sites/okta-sites.component';
 import { MyOieAppsComponent } from './my-oie-apps/my-oie-apps.component';
 import { PersonalAppsComponent } from './personal-apps/personal-apps.component';
 import { WorldtimeComponent } from './worldtime/worldtime.component';
+import { BookmarksComponent } from './bookmarks/bookmarks.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: LandingComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'myoieapps', component: MyOieAppsComponent },
   { path: 'personalapps', component: PersonalAppsComponent },
   { path: 'worldtime', component: WorldtimeComponent },
+  { path: 'bookmarks', component: BookmarksComponent },
 ];
 
 @NgModule({

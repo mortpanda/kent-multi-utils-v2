@@ -10,13 +10,15 @@ import { MenuListService } from '../shared/menu-list/menu-list.service';
 import { PrimeNGConfig } from 'primeng/api';
 import { ApiService } from '../shared/api-services/api.service';
 import { ProcessArrayService } from '../shared/process-array/process-array.service';
+
 @Component({
-  selector: 'app-dailysites',
-  templateUrl: './dailysites.component.html',
-  styleUrls: ['./dailysites.component.scss'],
+  selector: 'app-bookmarks',
+  templateUrl: './bookmarks.component.html',
+  styleUrls: ['./bookmarks.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DailysitesComponent implements OnInit {
+export class BookmarksComponent implements OnInit {
+  
   smallScreen: boolean;
   public authService = new OktaAuth(this.OktaSDKAuthService.config);
   strUserSession;
@@ -30,6 +32,8 @@ export class DailysitesComponent implements OnInit {
   myWebCache;
   dailyWebsites;
   siteLoaded: boolean;
+  myBookmarks;
+  searchText;
   constructor(
     private OktaGetTokenService: OktaGetTokenService,
     private OktaSDKAuthService: OktaSDKAuthService,
@@ -73,35 +77,18 @@ export class DailysitesComponent implements OnInit {
         this.myKey = await this.myAccessToken.claims.myKey;
         this.myEmail = await this.myAccessToken.claims.sub;
 
-        this.myWebCache = await localStorage.getItem('dailySites');
+        
+        var arrBookmarks;
+        arrBookmarks = await this.ApiService.GetMyWebsites(this.OktaConfigService.strMyBookmarkDownload, this.myKey, this.myEmail);
+        this.myBookmarks = await arrBookmarks
 
-        if (this.myWebCache == null) {
-          console.log('Daily sites empty');
-          const colWebsites = await this.ApiService.GetMyWebsites(this.OktaConfigService.dailySitesDownloadUri, this.myKey, this.myEmail);
-          const strSites = await JSON.stringify(colWebsites);
-          await localStorage.setItem('dailySites', strSites)
-          // console.log(strSites)
-          
-          let arrSites;
-          arrSites = await this.ProcessArrayService.processWebSites(JSON.parse(strSites), 'Daily Websites');
-          this.dailyWebsites = await arrSites.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-          this.siteLoaded = true;
-
-        } else {
-          const arrCachedSites = await localStorage.getItem('dailySites');
-          console.log('Daily sites from storage');
-          let arrSites;
-          arrSites = await this.ProcessArrayService.processWebSites(JSON.parse(arrCachedSites), 'Daily Websites')
-          this.dailyWebsites = await arrSites.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-          
-          this.siteLoaded = true;
-        }
+         
 
         break;
       }
     }
     console.log(this.strThisUser)
     console.log(this.myKey)
-    console.log(this.dailyWebsites)
+    await console.log(this.myBookmarks.sort((a, b) => (a.description > b.description) ? 1 : ((b.description > a.description) ? -1 : 0)))
   }
 }

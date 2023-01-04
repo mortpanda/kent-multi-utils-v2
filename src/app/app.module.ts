@@ -19,7 +19,9 @@ import { MyOieAppsComponent } from './my-oie-apps/my-oie-apps.component';
 import { PersonalAppsComponent } from './personal-apps/personal-apps.component';
 import { WorldtimeComponent } from './worldtime/worldtime.component';
 import { DatePipe } from '@angular/common';
-import {CardModule} from 'primeng/card';
+import { CardModule } from 'primeng/card';
+import { BookmarksComponent } from './bookmarks/bookmarks.component';
+import {InputTextModule} from 'primeng/inputtext';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import {CardModule} from 'primeng/card';
     OktaSitesComponent,
     MyOieAppsComponent,
     PersonalAppsComponent,
-    WorldtimeComponent
+    WorldtimeComponent,
+    BookmarksComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,9 @@ import {CardModule} from 'primeng/card';
     DockModule,
     ButtonModule,
     HttpClientModule,
-    CardModule
+    CardModule,
+    InputTextModule,
+
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
