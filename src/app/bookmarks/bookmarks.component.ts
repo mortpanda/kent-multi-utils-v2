@@ -10,7 +10,8 @@ import { MenuListService } from '../shared/menu-list/menu-list.service';
 import { PrimeNGConfig } from 'primeng/api';
 import { ApiService } from '../shared/api-services/api.service';
 import { ProcessArrayService } from '../shared/process-array/process-array.service';
-
+import { Table } from 'primeng/table';
+import { PrimeIcons } from 'primeng/api';
 @Component({
   selector: 'app-bookmarks',
   templateUrl: './bookmarks.component.html',
@@ -18,7 +19,7 @@ import { ProcessArrayService } from '../shared/process-array/process-array.servi
   encapsulation: ViewEncapsulation.None
 })
 export class BookmarksComponent implements OnInit {
-  
+
   smallScreen: boolean;
   public authService = new OktaAuth(this.OktaSDKAuthService.config);
   strUserSession;
@@ -34,6 +35,13 @@ export class BookmarksComponent implements OnInit {
   siteLoaded: boolean;
   myBookmarks;
   searchText;
+
+  tableColumns = [
+    { field: 'description', header: 'Description' },
+    { field: 'category', header: 'Category' },
+    { field: 'siteURL', header: 'URL' },
+  ];
+
   constructor(
     private OktaGetTokenService: OktaGetTokenService,
     private OktaSDKAuthService: OktaSDKAuthService,
@@ -77,18 +85,66 @@ export class BookmarksComponent implements OnInit {
         this.myKey = await this.myAccessToken.claims.myKey;
         this.myEmail = await this.myAccessToken.claims.sub;
 
-        
-        var arrBookmarks;
-        arrBookmarks = await this.ApiService.GetMyWebsites(this.OktaConfigService.strMyBookmarkDownload, this.myKey, this.myEmail);
-        this.myBookmarks = await arrBookmarks
+        this.myWebCache = await localStorage.getItem('colBookmarks');
+        let colWebsites
+        if (this.myWebCache == null) {
+          console.log('Bookmarks empty');
+          colWebsites = await this.ApiService.GetMyWebsites(this.OktaConfigService.strMyBookmarkDownload, this.myKey, this.myEmail);
+          const strSites = await JSON.stringify(colWebsites);
+          await localStorage.setItem('colBookmarks', strSites)
+          // console.log(strSites)
 
-         
+          // let arrSites;
+          // arrSites = await this.ProcessArrayService.processWebSites(JSON.parse(strSites), 'Daily Websites');
+          this.myBookmarks = await colWebsites.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+          this.siteLoaded = true;
+
+        } else {
+          let arrCachedSites = await localStorage.getItem('colBookmarks');
+          console.log('Bookmarks from storage');
+          colWebsites = await JSON.parse(arrCachedSites);
+          // let arrSites;
+          // arrSites = await this.ProcessArrayService.processWebSites(JSON.parse(arrCachedSites), 'Daily Websites')
+          this.myBookmarks = await colWebsites.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+
+          this.siteLoaded = true;
+        }
+
+
+        // var arrBookmarks;
+        // arrBookmarks = await this.ApiService.GetMyWebsites(this.OktaConfigService.strMyBookmarkDownload, this.myKey, this.myEmail);
+        // this.myBookmarks = await arrBookmarks
 
         break;
       }
     }
     console.log(this.strThisUser)
     console.log(this.myKey)
-    await console.log(this.myBookmarks.sort((a, b) => (a.description > b.description) ? 1 : ((b.description > a.description) ? -1 : 0)))
+    // await console.log(this.myBookmarks.sort((a, b) => (a.description > b.description) ? 1 : ((b.description > a.description) ? -1 : 0)))
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.myBookmarks.filter(s => s.includes(filterValue));
+
+
+
+  }
+
+  itemRow;
+  openProduct(row): void {
+    // let dialogRef = this.dialog.open(OrderDetailsComponent, {
+    //   // width: '800px', height: 'auto',
+    //   data: { row },
+    // });
+
+    // dialogRef.afterClosed().subscribe(result => { row = result; });
+    this.itemRow = row;
+    console.log(this.itemRow)
+    // this.DataService.changeMessage(this.itemRow);
+  }
+
+    clear(table: Table) {
+      table.clear();
+    }
 }

@@ -262,10 +262,12 @@ body {
     #toolBar {
         .p-dock {
             position: fixed !important;
+
             .p-dock-action {
                 height: 7vh;
             }
         }
+
         .p-dock {
             .p-dock-item {
                 padding: 0px !important;
@@ -354,7 +356,7 @@ body {
         // border-style: solid;
         width: 100% !important;
         // padding-left: 10% ;
-        text-align: center!important;
+        text-align: center !important;
     }
 
     #searchTexField {
@@ -379,53 +381,83 @@ body {
         border-color: transparent !important;
     }
 
-    .bookmarkDiv{
-        border-style: solid!important;
-        width:100%!important;
-        height:100%!important;
-    }
 
-    #bookmarkButton {
-        .p-button {
-            background-color: transparent !important;
-            // text-transform: uppercase !important;
-            border-radius: 0px !important;
-            margin: 10px !important;
-            border-left: none !important;
-            border-right: none !important;
-            border-color: #ffffff !important;
-            width: 85vw !important;
-            height: 10vh !important;
-            font-size: 10px !important;
-            text-align: left!important;
-        }
-    }
+   
 
-    .bookMarkDiv{
-        background-color: transparent !important;
-        // text-transform: uppercase !important;
-        border-radius: 0px !important;
-        margin: 5px !important;
-        border-left: none !important;
-        border-right: none !important;
-        border-color: #ffffff !important;
-        width: 85vw !important;
-        // height: 10vh !important;
-        font-size: 10px !important;
-        text-align: left!important;
-        border-top-style: solid!important;
-        border-bottom-style: solid!important;
-        border-width: 1px!important;
-        padding:10px!important;
-        -webkit-backdrop-filter: blur(7px) !important;
-            backdrop-filter: blur(7px) !important;
-    }
+    // #searchField {
+    //     .p-inputtext {
+    //         font-size: 10px !important;
+    //         color: #495057;
+    //         // background: #ffffff;
+    //         // padding: 0.75rem 0.75rem;
+    //         // border: 1px solid #ced4da;
+    //         // transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    //         // -webkit-appearance: none;
+    //         // appearance: none;
+    //         border-radius: 0px!important;
+    //     }
+    // }
 
-    .bookMarkDiv {
-            cursor: pointer !important;
-        }
-    
+    // .bookmarkDiv {
+    //     border-style: solid !important;
+    //     width: 100% !important;
+    //     height: 100% !important;
+    // }
 
+    // #bookmarkButton {
+    //     .p-button {
+    //         background-color: transparent !important;
+    //         // text-transform: uppercase !important;
+    //         border-radius: 0px !important;
+    //         margin: 10px !important;
+    //         border-left: none !important;
+    //         border-right: none !important;
+    //         border-color: #ffffff !important;
+    //         width: 85vw !important;
+    //         height: 10vh !important;
+    //         font-size: 10px !important;
+    //         text-align: left !important;
+    //     }
+    // }
+
+    // .bookmarkDiv {
+    //     background-color: transparent !important;
+    //     // text-transform: uppercase !important;
+    //     border-radius: 0px !important;
+    //     margin: 5px !important;
+    //     border-left: none !important;
+    //     border-right: none !important;
+    //     border-color: #ffffff !important;
+    //     width: 85vw !important;
+    //     // height: 10vh !important;
+    //     font-size: 10px !important;
+    //     text-align: left !important;
+    //     border-top-style: solid !important;
+    //     border-bottom-style: solid !important;
+    //     border-width: 1px !important;
+    //     padding: 10px !important;
+    //     -webkit-backdrop-filter: blur(7px) !important;
+    //     backdrop-filter: blur(7px) !important;
+    // }
+
+    // .bookMarkDiv {
+    //     cursor: pointer !important;
+    // }
+
+    // .bookmarkDesc {
+    //     // border-style: solid;
+    //     width:30%!important;
+    // }
+
+    // .bookmarkCat{
+    //     // border-style: solid;
+    //     width:10%!important;
+    // }
+
+    // .bookmarkUrl{
+    //     // border-style: solid;
+    //     width:60%!important;
+    // }
 }
 
 // ********** Main CSS *********

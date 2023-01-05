@@ -1,0 +1,81 @@
+.p-datatable .p-datatable-header {
+    background: transparent !important;
+    -webkit-backdrop-filter: blur(7px) !important;
+    backdrop-filter: blur(7px) !important;
+    color: #343a40;
+    border: none!important;
+    border-width: 1px 0 1px 0;
+    padding: 5px 5px !important;
+    font-weight: 700;
+}
+.p-inputtext {
+    font-size: 12px !important;
+    color: #495057;
+    background-color: transparent !important;
+    // background: #ffffff;
+    // padding: 0.75rem 0.75rem;
+    // border: 1px solid #ced4da;
+    // transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    // -webkit-appearance: none;
+    // appearance: none;
+    
+    border-radius: 0px !important;
+    -webkit-backdrop-filter: blur(7px) !important;
+    backdrop-filter: blur(7px) !important;
+    width:60vw!important;
+    color: #FFFFFF; 
+
+}
+
+.p-button.p-button-outlined {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid;
+    font-size: 10px !important;
+    margin-right: 10px !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+    text-align: left;
+    padding: 5px!important;
+    border: 1px solid #dee2e6;
+    border-width: 0 0 1px 0;
+    font-weight: 700;
+    color: #343a40;
+    background: #f8f9fa;
+    transition: box-shadow 0.2s;
+}
+.p-datatable-table {
+    // background-color: transparent!important;
+    color: #FFFFFF;
+    font-size: 12px !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    text-align: left;
+    border: 1px solid #dee2e6;
+    border-width: 0 0 1px 0;
+    padding: 5px!important;
+    
+}
+.p-datatable .p-datatable-tbody > tr {
+    background-color: transparent!important;
+    color: #FFFFFF!important;
+    -webkit-backdrop-filter: blur(700px) !important;
+    backdrop-filter: blur(700px) !important;
+}
+
+.thDesc{
+    min-width:30vw!important;
+}
+
+.thCat{
+    min-width:10vw!important;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+    background-color: #FFFFFF !important;
+    color: #000 !important;
+    -webkit-backdrop-filter: blur(700px) !important;
+    backdrop-filter: blur(700px) !important;
+}

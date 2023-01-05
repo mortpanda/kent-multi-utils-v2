@@ -21,7 +21,10 @@ import { WorldtimeComponent } from './worldtime/worldtime.component';
 import { DatePipe } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
-import {InputTextModule} from 'primeng/inputtext';
+import { InputTextModule } from 'primeng/inputtext';
+import { TableModule } from 'primeng/table';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +50,7 @@ import {InputTextModule} from 'primeng/inputtext';
     HttpClientModule,
     CardModule,
     InputTextModule,
+    TableModule,
 
   ],
   providers: [DatePipe],
