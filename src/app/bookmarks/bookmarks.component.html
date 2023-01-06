@@ -7,61 +7,29 @@
             <div class="menuHead">
                 <h2>Bookmarks</h2>
             </div>
-
-            <!-- <div class="searchDiv">
-                <input type="text" pInputText (keyup)="applyFilter($event)" id="searchTexField">
-
-            </div> -->
-
-            <p-table #dt1 [columns]="tableColumns" [value]="myBookmarks" [globalFilterFields]="['description','category','siteURL']">
+            <p-table #dt1  [value]="myBookmarks" selectionMode="single" [(selection)]="selectedRow" dataKey="code" (onRowSelect)="openWebsite($event)"  [globalFilterFields]="['description','category','siteURL']">
                 <ng-template pTemplate="caption">
                     <div fxLayoutAlign="start center">
-                        <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
-                        <!-- <span class="p-input-icon-left p-ml-auto"> -->
-                            <!-- <i class="pi pi-search"></i> -->
+                        <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button> 
                             <input pInputText type="text" id="searchField" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" >
-                        <!-- </span> -->
                     </div>
                 </ng-template>
-                <ng-template pTemplate="header" let-columns>
+                <ng-template pTemplate="header">
                     <tr>
-                        <!-- <th *ngFor="let col of columns">
-                            {{col.header}}
-                        </th> -->
-
                         <th class="thDesc">Description</th>
                         <th class="thCat">Category</th>
                         <th class="thCat">URL</th>
+                        
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body" let-rowData let-columns="columns">
-                    <tr (click)="openProduct(myBookmarks.siteURL)">
-                        <td *ngFor="let col of columns">
-                            {{rowData[col.field]}}
-                        </td>
+                <ng-template pTemplate="body" let-product>
+                    <tr [pSelectableRow]="product">
+                        <td>{{product.description}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.siteURL}}</td>
                     </tr>
                 </ng-template>
             </p-table>
-
-
-            <!-- <div fxLayout="columns wrap" fxLayoutAlign="center center">
-                <div class="bookmarkDiv" *ngFor="let menuItem of myBookmarks"
-                    (click)="MenuListService.Goto(menuItem.siteURL)" fxLayout="columns wrap"
-                    fxLayoutAlign="start start">
-                    <div class="bookmarkDesc">
-                        {{menuItem.description}}
-                    </div>
-
-                    <div class="bookmarkCat">
-                        {{menuItem.category}}
-                    </div>
-
-                    <div class="bookmarkUrl">
-                        {{menuItem.siteURL}}
-                    </div>
-
-                </div>
-            </div> -->
 
         </div>
         <div class="userName">{{strFullName}}</div>

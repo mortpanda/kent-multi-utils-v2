@@ -12,14 +12,18 @@ import { ApiService } from '../shared/api-services/api.service';
 import { ProcessArrayService } from '../shared/process-array/process-array.service';
 import { Table } from 'primeng/table';
 import { PrimeIcons } from 'primeng/api';
+import { SelectedSite } from '../shared/selected-site/selected-site';
 @Component({
   selector: 'app-bookmarks',
   templateUrl: './bookmarks.component.html',
   styleUrls: ['./bookmarks.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class BookmarksComponent implements OnInit {
 
+
+
+export class BookmarksComponent implements OnInit {
+  
   smallScreen: boolean;
   public authService = new OktaAuth(this.OktaSDKAuthService.config);
   strUserSession;
@@ -35,6 +39,7 @@ export class BookmarksComponent implements OnInit {
   siteLoaded: boolean;
   myBookmarks;
   searchText;
+  selectedRow:SelectedSite;
 
   tableColumns = [
     { field: 'description', header: 'Description' },
@@ -52,6 +57,7 @@ export class BookmarksComponent implements OnInit {
     private primengConfig: PrimeNGConfig,
     private ApiService: ApiService,
     private ProcessArrayService: ProcessArrayService,
+    
   ) {
     breakpointObserver.observe([
       Breakpoints.XSmall,
@@ -61,6 +67,7 @@ export class BookmarksComponent implements OnInit {
     });
     this.mainAppMenu = this.MenuListService.mainAppMenu;
     this.siteLoaded = false;
+
   }
 
   async ngOnInit() {
@@ -131,20 +138,20 @@ export class BookmarksComponent implements OnInit {
 
   }
 
-  itemRow;
-  openProduct(row): void {
+  
+  openWebsite(event) {
     // let dialogRef = this.dialog.open(OrderDetailsComponent, {
     //   // width: '800px', height: 'auto',
     //   data: { row },
     // });
 
     // dialogRef.afterClosed().subscribe(result => { row = result; });
-    this.itemRow = row;
-    console.log(this.itemRow)
+    // this.itemRow = row;
+    console.log(event.data.siteURL)
     // this.DataService.changeMessage(this.itemRow);
   }
 
-    clear(table: Table) {
-      table.clear();
-    }
+  clear(table: Table) {
+    table.clear();
+  }
 }
