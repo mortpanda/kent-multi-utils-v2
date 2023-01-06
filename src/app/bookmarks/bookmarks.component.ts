@@ -12,7 +12,7 @@ import { ApiService } from '../shared/api-services/api.service';
 import { ProcessArrayService } from '../shared/process-array/process-array.service';
 import { Table } from 'primeng/table';
 import { PrimeIcons } from 'primeng/api';
-import { SelectedSite } from '../shared/selected-site/selected-site';
+// import { SelectedSite } from '../shared/selected-site/selected-site';
 @Component({
   selector: 'app-bookmarks',
   templateUrl: './bookmarks.component.html',
@@ -39,7 +39,7 @@ export class BookmarksComponent implements OnInit {
   siteLoaded: boolean;
   myBookmarks;
   searchText;
-  selectedRow:SelectedSite;
+  // selectedRow:SelectedSite;
 
   tableColumns = [
     { field: 'description', header: 'Description' },
@@ -140,15 +140,7 @@ export class BookmarksComponent implements OnInit {
 
   
   openWebsite(event) {
-    // let dialogRef = this.dialog.open(OrderDetailsComponent, {
-    //   // width: '800px', height: 'auto',
-    //   data: { row },
-    // });
-
-    // dialogRef.afterClosed().subscribe(result => { row = result; });
-    // this.itemRow = row;
-    console.log(event.data.siteURL)
-    // this.DataService.changeMessage(this.itemRow);
+    window.open(event.data.siteURL, '_blank');
   }
 
   clear(table: Table) {

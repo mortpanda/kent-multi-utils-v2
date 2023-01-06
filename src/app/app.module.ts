@@ -23,7 +23,11 @@ import { CardModule } from 'primeng/card';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
-
+import { ConfigComponent } from './config/config.component';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { DialogModule } from 'primeng/dialog';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import { TableModule } from 'primeng/table';
     MyOieAppsComponent,
     PersonalAppsComponent,
     WorldtimeComponent,
-    BookmarksComponent
+    BookmarksComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +56,12 @@ import { TableModule } from 'primeng/table';
     CardModule,
     InputTextModule,
     TableModule,
+    ToastModule,
+    DialogModule,
+    DropdownModule,
 
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

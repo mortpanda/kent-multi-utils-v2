@@ -31,10 +31,6 @@ export class MenuListService {
       strUri: '/oktasites'
     },
     // {
-    //   label: "K-Lab Sites",
-    //   strUri: '/bookmarks'
-    // },
-    // {
     //   label: "Dev Info",
     //   strUri: '/bookmarks'
     // },
@@ -55,11 +51,12 @@ export class MenuListService {
       label: "World Time",
       strUri: '/worldtime'
     },
-
+    {
+      label: "Configuration",
+      strUri: '/config'
+    },
 
   ]
-
-
 
   dockMenu = [
     {
@@ -127,6 +124,18 @@ export class MenuListService {
       }
     },
   ]
+
+  configMenu = [
+    {
+      label: "Add Website",
+      modalOpen: 'addWebsite',
+    },
+    {
+      label: "Clear Cache",
+      modalOpen: 'clearCache',
+    },
+  ]
+
 
   async Goto(url){
     await window.open(url, '_blank');
