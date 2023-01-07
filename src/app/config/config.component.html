@@ -39,14 +39,25 @@
 <!-- ///////////////////////////////////////// -->
 <!-- Modal -->
 <!-- ///////////////////////////////////////// -->
-<p-dialog header="Add Website" [(visible)]="addWebsite" [modal]="true" [style]="{width: '40vw'}" [draggable]="false"
-    [resizable]="false">
-    <p class="m-0">Add Website</p>
+<p-dialog header="Add Website" [(visible)]="addWebsite" [modal]="true" [draggable]="false" [resizable]="false"
+    id="addModal">
 
+    <div class="modalBody" fxLayout="rows wrap" fxLayoutAlign="center start">
+        <div class="dropdownDiv">
+            <p-dropdown [options]="arrAppCat" [(ngModel)]="selectedCat" placeholder="Select a category"
+                optionLabel="name" [showClear]="true" id="catDropdown"></p-dropdown>
+        </div>
+        <div class="txtDiv" fxLayout="rows wrap" fxLayoutAlign="center center">
+            <input type="text" placeholder="Enter website name" pInputText [(ngModel)]="siteName" id="sitenameTxt"/>
+        </div>
+        <div class="txtDiv" fxLayout="rows wrap" fxLayoutAlign="center center">
+            <input type="text" placeholder="Enter website URL" pInputText [(ngModel)]="webURI" id="sitenameTxt"/>
+        </div>
 
+    </div>
 
     <ng-template pTemplate="footer">
-        <p-button icon="pi pi-check" (click)="addWebsite=false" label="Ok" styleClass="p-button-text"></p-button>
+        <p-button icon="pi pi-check" (click)="saveWebsite(false)" label="Ok" styleClass="p-button-text"></p-button>
     </ng-template>
 </p-dialog>
 

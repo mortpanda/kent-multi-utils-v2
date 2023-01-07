@@ -67,5 +67,27 @@ export class ApiService {
     return strWebsites;
   }
 
+  
+  async uploadWebApp(url, mykey, email, appName, appCategory, appUri) {
+    let requestURI;
+    requestURI = url;
+
+    let requestBody;
+    requestBody = {
+      mykey: mykey,
+      email: email,
+      category: appCategory,
+      appname: appName,
+      appUri: appUri,
+
+    }
+
+    let newWebApp;
+    newWebApp = await this.InvokeFlow(requestURI, requestBody);
+    // console.log(newWebApp.status);
+    return newWebApp;
+  }
+
+
 }
 

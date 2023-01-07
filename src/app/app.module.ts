@@ -27,8 +27,8 @@ import { ConfigComponent } from './config/config.component';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { DialogModule } from 'primeng/dialog';
-import {DropdownModule} from 'primeng/dropdown';
-
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +59,7 @@ import {DropdownModule} from 'primeng/dropdown';
     ToastModule,
     DialogModule,
     DropdownModule,
-
+    FormsModule,
   ],
   providers: [DatePipe, MessageService],
   bootstrap: [AppComponent]

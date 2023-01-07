@@ -137,9 +137,9 @@ export class MenuListService {
   ]
 
 
-  async Goto(url){
+  async Goto(url) {
     await window.open(url, '_blank');
-  } 
+  }
 
   async Logout() {
     this.OktaSDKAuthService.OktaSDKAuthClient.signOut();
@@ -148,5 +148,29 @@ export class MenuListService {
   async GoHome() {
     window.location.replace(this.OktaConfigService.strPostLogoutURL);
   }
+
+  addWebsiteMenu = [
+    {
+      name: "Daily Websites"
+    },
+    {
+      name: "Admin Dashboards"
+    },
+    {
+      name: "User Dashboards"
+    },
+    {
+      name: "Okta Websites"
+    },
+    {
+      name: "My OIE Project Apps"
+    },
+    {
+      name: "My Personal Apps"
+    },
+    {
+      name: "Bookmark"
+    },
+  ]
 
 }
