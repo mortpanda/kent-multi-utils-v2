@@ -7,12 +7,19 @@
             <div class="menuHead">
                 <h2>Personal Apps</h2>
             </div>
-            <p-button label="{{menuItem.name}}" (click)="MenuListService.Goto(menuItem.strUri)" *ngFor="let menuItem of dailyWebsites"
-                id="appButton">
+            <div *ngIf="dataLoaded; else notShow" fxLayout="row wrap" fxLayoutAlign="center start">
+                <p-button label="{{menuItem.name}}" (click)="MenuListService.Goto(menuItem.strUri)"
+                    *ngFor="let menuItem of dailyWebsites" id="appButton">
 
-            </p-button>
+                </p-button>
+            </div>
 
         </div>
+        <ng-template #notShow>
+            <div fxLayout="row wrap" fxLayoutAlign="center center">
+                <p-progressSpinner></p-progressSpinner>
+            </div>
+        </ng-template>
         <div class="userName">{{strFullName}}</div>
     </div>
 
@@ -27,12 +34,19 @@
             <div class="menuHead">
                 <h2>Personal Apps</h2>
             </div>
-            <p-button label="{{menuItem.name}}" (click)="MenuListService.Goto(menuItem.strUri)" *ngFor="let menuItem of dailyWebsites"
-                id="appButton">
+            <div *ngIf="dataLoaded; else notShow" fxLayout="row wrap" fxLayoutAlign="center start">
+                <p-button label="{{menuItem.name}}" (click)="MenuListService.Goto(menuItem.strUri)"
+                    *ngFor="let menuItem of dailyWebsites" id="appButton">
 
-            </p-button>
+                </p-button>
+            </div>
 
         </div>
+        <ng-template #notShow>
+            <div fxLayout="row wrap" fxLayoutAlign="center center">
+                <p-progressSpinner></p-progressSpinner>
+            </div>
+        </ng-template>
         <div class="userName">{{strFullName}}</div>
     </div>
 </ng-template>

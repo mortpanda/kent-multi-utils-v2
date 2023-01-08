@@ -30,7 +30,7 @@ export class MyOieAppsComponent implements OnInit {
   myEmail;
   myWebCache;
   dailyWebsites;
-  siteLoaded: boolean;
+  dataLoaded: boolean;
   constructor(
     private OktaGetTokenService: OktaGetTokenService,
     private OktaSDKAuthService: OktaSDKAuthService,
@@ -49,7 +49,7 @@ export class MyOieAppsComponent implements OnInit {
       this.smallScreen = result.matches;
     });
     this.mainAppMenu = this.MenuListService.mainAppMenu;
-    this.siteLoaded = false;
+    this.dataLoaded=false;
   }
 
   async ngOnInit() {
@@ -83,13 +83,13 @@ export class MyOieAppsComponent implements OnInit {
           await localStorage.setItem('oieApps', strSites)
           // console.log(strSites)
           this.dailyWebsites = await this.ProcessArrayService.processWebSites(JSON.parse(strSites), 'My OIE Project Apps');
-          this.siteLoaded = true;
+          this.dataLoaded = true;
 
         } else {
           const arrCachedSites = await localStorage.getItem('oieApps');
           console.log('OIE Apps from storage')
           this.dailyWebsites = await this.ProcessArrayService.processWebSites(JSON.parse(arrCachedSites), 'My OIE Project Apps')
-          this.siteLoaded = true;
+          this.dataLoaded = true;
         }
 
         break;

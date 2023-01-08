@@ -107,7 +107,7 @@ export class ConfigComponent implements OnInit {
 
   }
 
-
+  uploadRes;
   async saveWebsite(modalBol) {
     this.addWebsite = modalBol;
     this.myAccessToken = await this.OktaGetTokenService.GetAccessToken();
@@ -116,31 +116,44 @@ export class ConfigComponent implements OnInit {
 
     console.log(this.selectedCat.name);
     console.log(this.siteName);
-    console.log(this.webURI)
+    console.log(this.webURI);
 
-    if (this.selectedCat.name = "Bookmark") {
-      //Bookmark Category
-      this.uploadURL = await this.OktaConfigService.strAddBookmarkURL
-    } else {
-      this.uploadURL = await this.OktaConfigService.strNewWebAppURL
+    switch (this.selectedCat.name) {
+      case "Wiki": {
+        this.uploadURL = await this.OktaConfigService.strAddBookmarkURL
+        break;
+      }
+      case "Dev": {
+        this.uploadURL = await this.OktaConfigService.strAddBookmarkURL
+        break;
+      }
+      case "Work_others": {
+        this.uploadURL = await this.OktaConfigService.strAddBookmarkURL
+        break;
+      }
+      case "Others": {
+        this.uploadURL = await this.OktaConfigService.strAddBookmarkURL
+        break;
+      }
+      default: {
+        this.uploadURL = await this.OktaConfigService.strNewWebAppURL
+        break;
+      }
     }
+
     await console.log(this.uploadURL)
+    this.uploadRes = await this.ApiService.uploadWebApp(this.uploadURL, this.myKey, this.myEmail, this.siteName, this.selectedCat.name, this.webURI)
 
-    // name: "Daily Websites"
-    // name: "Admin Dashboards"
-    // name: "User Dashboards"
-    // name: "Okta Websites"
-    // name: "My OIE Project Apps"
-    // name: "My Personal Apps"
-
-    // {
-    //   "mykey": "tWnKgzyC4jofvrUDV1T8YcbAUHfJCLCx22HqRfdBZ44uwdTIK5ZqXUwGNKikIfvn72n4x1PLNQIgWmuVMpJ9BT4cDZr7VmtcVDvpB3jMCV2euhpyQulDLgU2Fuet4rrSVhtiwiusPuDo13Era4iBExF6sk8DGp4YUpxgNiL6akIaf3HWol3BoJGquEXv4NE0iE58JGyW9zNYX5ki6Dampf4iIr0yt0CAJlYi1s2s3arHx6DQLhURrlWQiKFNwoFw",
-    //   "email": "kent.nagao@okta.com",
-    //   "category": "User Dashboards",
-    //   "appname": "Ytsuboi Playground",
-    //   "appUri": "https://oie-sub-ytsuboi.oktapreview.com/"
-    // }
-
+    if (this.uploadRes.status == "Upload Successful") {
+      this.toastMsg = await "Upload Successful";
+      await this.showSuccess();
+    } else {
+      this.toastMsg = await "Error!";
+      this.showError()
+    }
+    this.uploadURL = await "";
+    this.siteName = await "";
+    this.webURI = "";
   }
 
   showSuccess() {

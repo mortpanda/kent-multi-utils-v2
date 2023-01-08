@@ -191,6 +191,39 @@ body {
     .tdURL {
         display: none !important;
     }
+    #addModal {
+        overflow: hidden!important;
+        .p-dialog {
+            width: 80vw !important;
+            height: 40vh !important;
+        }
+        .p-dialog .p-dialog-content {
+            padding-bottom: 0px!important;
+            overflow: hidden!important;
+        }
+    }
+    .modalBody {
+        height: 40vh !important;
+        overflow: hidden!important;
+    }
+
+    .dropdownDiv {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .txtDiv {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        width: 100% !important;
+    }
+
+    #sitenameTxt {
+        width: 100% !important;
+    }
+    #catDropdown{
+        width: 100% !important;
+    }
 }
 
 // ********** Landscape **********
@@ -311,19 +344,6 @@ body {
     #appButton {
         .p-button:hover {
             color: #CC8A00 !important;
-            // background-color: darkgrey !important;
-            // text-transform: uppercase !important;
-            // border-radius: 0px !important;
-            // margin: 10px !important;
-            // border-left: none !important;
-            // border-right: none !important;
-            // border-color: #ffffff !important;
-            // width: 20vw !important;
-            // height: 10vh !important;
-            // font-size: 12px !important;
-            // font-size: 12px !important;
-            // -webkit-backdrop-filter: blur(7px) !important;
-            // backdrop-filter: blur(7px) !important;
         }
 
     }

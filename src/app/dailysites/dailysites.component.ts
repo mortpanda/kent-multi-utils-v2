@@ -29,7 +29,7 @@ export class DailysitesComponent implements OnInit {
   myEmail;
   myWebCache;
   dailyWebsites;
-  siteLoaded: boolean;
+  dataLoaded: boolean;
   constructor(
     private OktaGetTokenService: OktaGetTokenService,
     private OktaSDKAuthService: OktaSDKAuthService,
@@ -48,7 +48,7 @@ export class DailysitesComponent implements OnInit {
       this.smallScreen = result.matches;
     });
     this.mainAppMenu = this.MenuListService.mainAppMenu;
-    this.siteLoaded = false;
+    this.dataLoaded=false;
   }
 
   async ngOnInit() {
@@ -85,7 +85,7 @@ export class DailysitesComponent implements OnInit {
           let arrSites;
           arrSites = await this.ProcessArrayService.processWebSites(JSON.parse(strSites), 'Daily Websites');
           this.dailyWebsites = await arrSites.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-          this.siteLoaded = true;
+          this.dataLoaded = true;
 
         } else {
           const arrCachedSites = await localStorage.getItem('dailySites');
@@ -94,7 +94,7 @@ export class DailysitesComponent implements OnInit {
           arrSites = await this.ProcessArrayService.processWebSites(JSON.parse(arrCachedSites), 'Daily Websites')
           this.dailyWebsites = await arrSites.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
           
-          this.siteLoaded = true;
+          this.dataLoaded = true;
         }
 
         break;

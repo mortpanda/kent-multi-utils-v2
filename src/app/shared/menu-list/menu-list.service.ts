@@ -30,10 +30,6 @@ export class MenuListService {
       label: "Okta Sites",
       strUri: '/oktasites'
     },
-    // {
-    //   label: "Dev Info",
-    //   strUri: '/bookmarks'
-    // },
     {
       label: "OIE Projects",
       strUri: '/myoieapps'
@@ -169,7 +165,16 @@ export class MenuListService {
       name: "My Personal Apps"
     },
     {
-      name: "Bookmark"
+      name: "Wiki"
+    },
+    {
+      name: "Dev"
+    },
+    {
+      name: "Work_others"
+    },
+    {
+      name: "Others"
     },
   ]
 

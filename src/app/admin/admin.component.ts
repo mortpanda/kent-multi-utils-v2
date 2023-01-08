@@ -30,7 +30,7 @@ export class AdminComponent implements OnInit {
   myEmail;
   myWebCache;
   dailyWebsites;
-  siteLoaded: boolean;
+  dataLoaded: boolean;
   constructor(
     private OktaGetTokenService: OktaGetTokenService,
     private OktaSDKAuthService: OktaSDKAuthService,
@@ -49,7 +49,7 @@ export class AdminComponent implements OnInit {
       this.smallScreen = result.matches;
     });
     this.mainAppMenu = this.MenuListService.mainAppMenu;
-    this.siteLoaded = false;
+    this.dataLoaded = false;
   }
 
   async ngOnInit() {
@@ -83,13 +83,13 @@ export class AdminComponent implements OnInit {
           await localStorage.setItem('adminSites', strSites)
           // console.log(strSites)
           this.dailyWebsites = await this.ProcessArrayService.processWebSites(JSON.parse(strSites), 'Admin Dashboards');
-          this.siteLoaded = true;
+          this.dataLoaded = true;
 
         } else {
           const arrCachedSites = await localStorage.getItem('adminSites');
           console.log('Admin sites from storage')
           this.dailyWebsites = await this.ProcessArrayService.processWebSites(JSON.parse(arrCachedSites), 'Admin Dashboards')
-          this.siteLoaded = true;
+          this.dataLoaded = true;
         }
 
         break;

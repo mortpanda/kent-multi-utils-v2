@@ -29,7 +29,7 @@ export class UserComponent implements OnInit {
   myEmail;
   myWebCache;
   dailyWebsites;
-  siteLoaded: boolean;
+  dataLoaded: boolean;
   constructor(
     private OktaGetTokenService: OktaGetTokenService,
     private OktaSDKAuthService: OktaSDKAuthService,
@@ -48,7 +48,7 @@ export class UserComponent implements OnInit {
       this.smallScreen = result.matches;
     });
     this.mainAppMenu = this.MenuListService.mainAppMenu;
-    this.siteLoaded = false;
+    this.dataLoaded=false;
   }
 
   async ngOnInit() {
@@ -82,13 +82,13 @@ export class UserComponent implements OnInit {
           await localStorage.setItem('userSites', strSites)
           // console.log(strSites)
           this.dailyWebsites = await this.ProcessArrayService.processWebSites(JSON.parse(strSites), 'User Dashboards');
-          this.siteLoaded = true;
+          this.dataLoaded = true;
 
         } else {
           const arrCachedSites = await localStorage.getItem('userSites');
           console.log('User sites from storage')
           this.dailyWebsites = await this.ProcessArrayService.processWebSites(JSON.parse(arrCachedSites), 'User Dashboards')
-          this.siteLoaded = true;
+          this.dataLoaded = true;
         }
 
         break;

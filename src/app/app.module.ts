@@ -29,6 +29,7 @@ import { MessageService } from 'primeng/api';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +61,7 @@ import { FormsModule } from '@angular/forms';
     DialogModule,
     DropdownModule,
     FormsModule,
+    ProgressSpinnerModule,
   ],
   providers: [DatePipe, MessageService],
   bootstrap: [AppComponent]
