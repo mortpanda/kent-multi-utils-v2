@@ -49,7 +49,7 @@ export class OktaSitesComponent implements OnInit {
       this.smallScreen = result.matches;
     });
     this.mainAppMenu = this.MenuListService.mainAppMenu;
-    this.dataLoaded=false;
+    this.dataLoaded = false;
   }
 
   async ngOnInit() {
@@ -81,22 +81,19 @@ export class OktaSitesComponent implements OnInit {
           const colWebsites = await this.ApiService.GetMyWebsites(this.OktaConfigService.dailySitesDownloadUri, this.myKey, this.myEmail);
           const strSites = await JSON.stringify(colWebsites);
           await localStorage.setItem('oktaSites', strSites)
-          // console.log(strSites)
+
           this.dailyWebsites = await this.ProcessArrayService.processWebSites(JSON.parse(strSites), 'Okta Websites');
-          this.dataLoaded=true;
+          this.dataLoaded = true;
 
         } else {
           const arrCachedSites = await localStorage.getItem('oktaSites');
           console.log('Okta sites from storage')
           this.dailyWebsites = await this.ProcessArrayService.processWebSites(JSON.parse(arrCachedSites), 'Okta Websites')
-          this.dataLoaded=true;
+          this.dataLoaded = true;
         }
 
         break;
       }
     }
-    console.log(this.strThisUser)
-    console.log(this.myKey)
-    console.log(this.dailyWebsites)
   }
 }

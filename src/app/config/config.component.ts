@@ -32,10 +32,8 @@ export class ConfigComponent implements OnInit {
   arrAppCat = [];
   selectedCat;
   toastMsg;
-
   siteName;
   webURI;
-
   myKey;
   myEmail;
   uploadURL;
@@ -63,7 +61,6 @@ export class ConfigComponent implements OnInit {
     this.addWebsite = false;
     this.clearCache = false;
     this.arrAppCat = this.MenuListService.addWebsiteMenu;
-
   }
 
   async ngOnInit() {
@@ -89,7 +86,6 @@ export class ConfigComponent implements OnInit {
     }
   }
 
-
   showModalDialog(config) {
     console.log(config)
     switch (config) {
@@ -104,7 +100,6 @@ export class ConfigComponent implements OnInit {
         break;
       }
     }
-
   }
 
   uploadRes;

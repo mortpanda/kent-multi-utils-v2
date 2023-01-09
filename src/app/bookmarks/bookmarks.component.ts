@@ -12,7 +12,6 @@ import { ApiService } from '../shared/api-services/api.service';
 import { ProcessArrayService } from '../shared/process-array/process-array.service';
 import { Table } from 'primeng/table';
 import { PrimeIcons } from 'primeng/api';
-// import { SelectedSite } from '../shared/selected-site/selected-site';
 @Component({
   selector: 'app-bookmarks',
   templateUrl: './bookmarks.component.html',
@@ -55,7 +54,6 @@ export class BookmarksComponent implements OnInit {
     private primengConfig: PrimeNGConfig,
     private ApiService: ApiService,
     private ProcessArrayService: ProcessArrayService,
-    
   ) {
     breakpointObserver.observe([
       Breakpoints.XSmall,
@@ -65,11 +63,9 @@ export class BookmarksComponent implements OnInit {
     });
     this.mainAppMenu = this.MenuListService.mainAppMenu;
     this.dataLoaded=false;
-
   }
 
   async ngOnInit() {
-
     this.strUserSession = await this.authService.isAuthenticated();
     switch (this.strUserSession == true) {
       case false: {
@@ -120,7 +116,6 @@ export class BookmarksComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.myBookmarks.filter(s => s.includes(filterValue));
-
   }
 
   openWebsite(event) {

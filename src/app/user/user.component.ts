@@ -80,7 +80,6 @@ export class UserComponent implements OnInit {
           const colWebsites = await this.ApiService.GetMyWebsites(this.OktaConfigService.dailySitesDownloadUri, this.myKey, this.myEmail);
           const strSites = await JSON.stringify(colWebsites);
           await localStorage.setItem('userSites', strSites)
-          // console.log(strSites)
           this.dailyWebsites = await this.ProcessArrayService.processWebSites(JSON.parse(strSites), 'User Dashboards');
           this.dataLoaded = true;
 
@@ -94,8 +93,5 @@ export class UserComponent implements OnInit {
         break;
       }
     }
-    console.log(this.strThisUser)
-    console.log(this.myKey)
-    console.log(this.dailyWebsites)
   }
 }

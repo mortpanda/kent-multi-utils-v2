@@ -80,7 +80,6 @@ export class DailysitesComponent implements OnInit {
           const colWebsites = await this.ApiService.GetMyWebsites(this.OktaConfigService.dailySitesDownloadUri, this.myKey, this.myEmail);
           const strSites = await JSON.stringify(colWebsites);
           await localStorage.setItem('dailySites', strSites)
-          // console.log(strSites)
           
           let arrSites;
           arrSites = await this.ProcessArrayService.processWebSites(JSON.parse(strSites), 'Daily Websites');
@@ -96,12 +95,8 @@ export class DailysitesComponent implements OnInit {
           
           this.dataLoaded = true;
         }
-
         break;
       }
     }
-    console.log(this.strThisUser)
-    console.log(this.myKey)
-    console.log(this.dailyWebsites)
   }
 }

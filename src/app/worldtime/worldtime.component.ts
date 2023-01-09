@@ -79,9 +79,7 @@ export class WorldtimeComponent implements OnInit {
         break;
       }
     }
-    console.log(this.strThisUser)
-    console.log(this.myKey)
-    console.log(this.dailyWebsites)
+
   }
 
 }
