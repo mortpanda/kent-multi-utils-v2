@@ -7,8 +7,15 @@
             <div class="menuHead">
                 <h2>Main Menu</h2>
             </div>
+            <p-button label="Okta"  (click)="MenuListService.Goto('https://okta.okta.com')" id="appButton">
+            </p-button>
+            <p-button label="Kent OIE"  (click)="MenuListService.Goto('https://kent-nagao-oie-admin.oktapreview.com/admin/dashboard')" id="appButton">
+            </p-button>
+            <p-button label="Kent Lab OEI Hub"  (click)="MenuListService.Goto('https://kent-nagao-oie-hub-admin.oktapreview.com/admin/dashboard')" id="appButton">
+            </p-button>
+
             <p-button label="{{menuItem.label}}" routerLink="/{{menuItem.strUri}}" *ngFor="let menuItem of mainAppMenu"
-                id="appButton" >
+                id="appButton">
 
             </p-button>
 
@@ -26,6 +33,11 @@
             <div class="menuHead">
                 <h1>Main Menu</h1>
             </div>
+            <p-button label="Okta"  (click)="MenuListService.Goto('https://okta.okta.com')" id="appButton">
+            </p-button>
+            <p-button label="Kent OIE"  (click)="MenuListService.Goto('https://kent-nagao-oie-admin.oktapreview.com/admin/dashboard')" id="appButton">
+            </p-button>
+            <p-button label="Kent Lab OEI Hub"  (click)="MenuListService.Goto('https://kent-nagao-oie-hub-admin.oktapreview.com/admin/dashboard')" id="appButton"></p-button>
             <p-button label="{{menuItem.label}}" routerLink="/{{menuItem.strUri}}" *ngFor="let menuItem of mainAppMenu"
                 id="appButton">
 
