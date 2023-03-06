@@ -1,0 +1,36 @@
+<ng-template #bigScreen>
+
+    <div class="appMain" fxLayout="columns wrap" fxLayoutAlign="center center">
+        <app-dock></app-dock>
+        <div class="appContainer" fxLayout="row wrap" fxLayoutAlign="center start">
+
+            <!-- <div class="menuHead">
+                <h2>My Apps</h2>
+            </div> -->
+
+            <div>
+                <iframe [src]="strSafeSite" class="mainIframe"></iframe>
+            </div>
+        </div>
+        <div class="userName">{{strFullName}}</div>
+    </div>
+
+</ng-template>
+<!-- ************************* SMALL SCREEN ************************* -->
+<!-- ************************* SMALL SCREEN ************************* -->
+<ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+    <div class="appMain" fxLayout="rows wrap" fxLayoutAlign="center center">
+        <app-dock></app-dock>
+        <div class="appContainer" fxLayout="rows wrap" fxLayoutAlign="center start">
+            <!-- <div class="menuHead">
+                <h1>My Apps</h1>
+            </div> -->
+
+            <div>
+                <iframe [src]="strSafeSite" class="mainIframe"></iframe>
+            </div>
+
+        </div>
+        <div class="userName">{{strFullName}}</div>
+    </div>
+</ng-template>

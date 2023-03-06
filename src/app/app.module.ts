@@ -30,6 +30,7 @@ import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { MyappsComponent } from './myapps/myapps.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     PersonalAppsComponent,
     WorldtimeComponent,
     BookmarksComponent,
-    ConfigComponent
+    ConfigComponent,
+    MyappsComponent
   ],
   imports: [
     BrowserModule,

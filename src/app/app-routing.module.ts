@@ -11,6 +11,7 @@ import { PersonalAppsComponent } from './personal-apps/personal-apps.component';
 import { WorldtimeComponent } from './worldtime/worldtime.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { ConfigComponent } from './config/config.component';
+import {MyappsComponent} from './myapps/myapps.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: LandingComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'worldtime', component: WorldtimeComponent },
   { path: 'bookmarks', component: BookmarksComponent },
   { path: 'config', component: ConfigComponent },
+  { path: 'myapps', component: MyappsComponent},
 ];
 
 @NgModule({
